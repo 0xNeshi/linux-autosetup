@@ -218,11 +218,6 @@ foundryup
 echo "Setup Arbitrum Stylus tools..."
 sudo apt-get install pkg-config libssl-dev -y
 cargo install cargo-stylus@0.5.3
-rustup install nightly-2024-09-05
-rustup component add rust-src --toolchain nightly-2024-09-05-x86_64-unknown-linux-gnu
-rustup target add wasm32-unknown-unknown --toolchain nightly-2024-09-05
-# will use stable once nitro testnode supports it
-# rustup target add wasm32-unknown-unknown --toolchain 1.81
 sep
 
 # install Solidity (version for Stylus)
