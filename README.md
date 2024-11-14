@@ -188,7 +188,8 @@ esac
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-sudo groupadd docker
+# uncomment the below line to create 'docker' group if it does not exist
+# sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 sep
