@@ -100,8 +100,9 @@ go version
 sep
 
 # install Rust
+# Toolchain 1.81.0 is necessary to work with Stylus
 echo "Install Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain=1.81.0 -y
 source $HOME/.profile
 source $HOME/.bashrc
 rustc --version
@@ -208,16 +209,19 @@ cd rust-contracts-stylus
 cd ..
 sep
 
+# install Foundry RS
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+
 # set up Arbitrum Stylus
 echo "Setup Arbitrum Stylus tools..."
 sudo apt-get install pkg-config libssl-dev -y
 cargo install cargo-stylus@0.5.3
-rustup update
-rustup target add wasm32-unknown-unknown
 rustup install nightly-2024-09-05
-rustup install nightly
 rustup component add rust-src --toolchain nightly-2024-09-05-x86_64-unknown-linux-gnu
 rustup target add wasm32-unknown-unknown --toolchain nightly-2024-09-05
+# will use stable once nitro testnode supports it
+# rustup target add wasm32-unknown-unknown --toolchain 1.81
 sep
 
 # install Solidity (version for Stylus)
