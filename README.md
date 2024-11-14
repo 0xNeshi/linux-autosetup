@@ -20,7 +20,6 @@ sep() {
 # REPLACE THESE WITH YOUR VALUES!!!
 EMAIL="email"
 NAME="name"
-WORK_EMAIL="work_email"
 
 ########### install packages
 sudo apt update && sudo apt upgrade -y && sep
@@ -206,7 +205,7 @@ echo "Clone OpenZeppelin Stylus repo..."
 git clone git@github.com:OpenZeppelin/rust-contracts-stylus.git
 cd rust-contracts-stylus
 git config --local user.name "$NAME"
-git config --local user.email "$WORK_EMAIL"
+git config --local user.email "$EMAIL"
 cd ..
 sep
 
