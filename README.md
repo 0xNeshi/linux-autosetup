@@ -211,6 +211,7 @@ sep
 
 # install Foundry RS
 curl -L https://foundry.paradigm.xyz | bash
+source $HOME/.bashrc
 foundryup
 
 # set up Arbitrum Stylus
