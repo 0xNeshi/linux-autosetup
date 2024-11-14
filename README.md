@@ -204,8 +204,6 @@ sep
 echo "Clone OpenZeppelin Stylus repo..."
 git clone git@github.com:OpenZeppelin/rust-contracts-stylus.git
 cd rust-contracts-stylus
-git config --local user.name "$NAME"
-git config --local user.email "$EMAIL"
 cd ..
 sep
 
