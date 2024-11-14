@@ -22,7 +22,7 @@ EMAIL="email"
 NAME="name"
 
 ########### install packages
-sudo apt update && sudo apt upgrade -y && sep
+sudo apt update && sudo apt upgrade -y && sudo apt install curl -y && sep
 
 # turn power management off for wifi
 sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
