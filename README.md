@@ -142,7 +142,7 @@ echo "Create new SSH key..."
 ssh-keygen -q -t ed25519 -C "$EMAIL" -f ~/.ssh/id_ed25519 <<<y >/dev/null 2>&1
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub
+ssh-keygen -p -f ~/.ssh/id_ed25519
 sep
 
 # install GH CLI
@@ -156,7 +156,12 @@ echo "Install GitHub CLI..."
 
 # upload SSH key to GH
 echo "Authenticate to GitHub & Upload SSH key..."
-gh auth login -w -p ssh
+gh auth login -w
+gh config set git_protocol ssh --host github.com
+gh ssh-key add ~/.ssh/id_ed25519.pub --type signing
+gh ssh-key add ~/.ssh/id_ed25519.pub
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
 sep
 
 # Docker setup
@@ -250,15 +255,15 @@ alias gaaca='function gaacaf(){ git add .; git commit --amend --no-edit; }; gaac
 alias gaacam='function gaacaf(){ git add .; git commit --amend; }; gaacaf'
 alias gaacap='function gaacapf(){ git add .; git commit --amend --no-edit; git push -f; }; gaacapf'
 alias gaacapm='function gaacapf(){ git add .; git commit --amend; git push -f; }; gaacapf'
-alias gaacp='function gaacpf(){ git add .; git commit -m "$1"; git push; }; gaacpf'
-alias gaacpf='function gaacpff(){ git add .; git commit -m "$1"; git push -f; }; gaacpff'
-alias gac='function gacf(){ git add "$1"; git commit -m "$2"; }; gacf'
-alias gaca='function gacaf(){ git add "$1"; git commit --amend --no-edit; }; gacaf'
-alias gacam='function gacamf(){ git add "$1"; git commit --amend; }; gacamf'
-alias gacap='function gacapf(){ git add "$1"; git commit --amend --no-edit; git push -f; }; gacapf'
-alias gacapm='function gacapmf(){ git add "$1"; git commit --amend; git push -f; }; gacapmf'
-alias gacp='function gacpf(){ git add "$1"; git commit -m "$2"; git push; }; gacpf'
-alias gacpf='function gacpff(){ git add "$1"; git commit -m "$2"; git push -f; }; gacpff'
+alias gaacp='function gaacpf(){ git add .; git commit -m "\$1"; git push; }; gaacpf'
+alias gaacpf='function gaacpff(){ git add .; git commit -m "\$1"; git push -f; }; gaacpff'
+alias gac='function gacf(){ git add "\$1"; git commit -m "\$2"; }; gacf'
+alias gaca='function gacaf(){ git add "\$1"; git commit --amend --no-edit; }; gacaf'
+alias gacam='function gacamf(){ git add "\$1"; git commit --amend; }; gacamf'
+alias gacap='function gacapf(){ git add "\$1"; git commit --amend --no-edit; git push -f; }; gacapf'
+alias gacapm='function gacapmf(){ git add "\$1"; git commit --amend; git push -f; }; gacapmf'
+alias gacp='function gacpf(){ git add "\$1"; git commit -m "\$2"; git push; }; gacpf'
+alias gacpf='function gacpff(){ git add "\$1"; git commit -m "\$2"; git push -f; }; gacpff'
 alias gb='git branch'
 alias gbdmr='git branch -D master'
 alias gc='git commit -m'
@@ -266,7 +271,7 @@ alias gca='git commit --amend --no-edit'
 alias gcam='git commit --amend'
 alias gcb='git checkout -b'
 alias gco='git checkout --ours .'
-alias gcbp='function gcbpf(){ git checkout -b "$1"; git push --set-upstream origin "$1"; }; gcbpf'
+alias gcbp='function gcbpf(){ git checkout -b "\$1"; git push --set-upstream origin "\$1"; }; gcbpf'
 alias gd='git diff'
 alias gf='git fetch'
 alias gfs='git fetch && git switch'
