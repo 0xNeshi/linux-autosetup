@@ -368,4 +368,5 @@ echo "TODO"
 echo "----------------"
 echo "Setup KeePassXC, see https://keepassxc.org/docs/KeePassXC_GettingStarted#_setup_browser_integration"
 ```
+
 3. Run the script with `./setup.sh`.
