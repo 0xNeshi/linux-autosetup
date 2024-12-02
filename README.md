@@ -106,6 +106,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.profile
 source $HOME/.bashrc
 rustc --version
+cargo install cargo-expand
 sep
 
 # install Cairo
@@ -210,8 +211,11 @@ sep
 # clone OZ Stylus library
 echo "Clone OpenZeppelin Stylus repo..."
 git clone git@github.com:OpenZeppelin/rust-contracts-stylus.git
-cd rust-contracts-stylus
-cd ..
+sep
+
+# install nextest crate
+echo "Installing Stylus cargo dependencies..."
+cargo install cargo-nextest --locked
 sep
 
 # install Foundry RS
