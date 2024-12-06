@@ -358,13 +358,14 @@ alias cbasha='code ~/.bash_aliases'
 alias sbash='source ~/.bashrc'
 
 # custom aliases
-alias e='exit'
-alias suup='sudo apt update && sudo apt upgrade -y && asdf install scarb latest && sudo apt autoremove -y'
+alias c='clear'
 alias cd1='cd ..'
 alias cd2='cd ../..'
 alias cd3='cd ../../..'
 alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
+alias e='exit'
+alias suup='sudo apt update && sudo apt upgrade -y && asdf install scarb latest && sudo apt autoremove -y'
 EOT
 
 ########### TODO
