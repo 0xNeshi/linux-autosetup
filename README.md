@@ -359,7 +359,7 @@ alias sbash='source ~/.bashrc'
 
 # custom aliases
 alias e='exit'
-alias sudoupgrade='sudo apt update && sudo apt upgrade -y && asdf install scarb latest && sudo apt autoremove -y'
+alias suup='sudo apt update && sudo apt upgrade -y && asdf install scarb latest && sudo apt autoremove -y'
 alias cd1='cd ..'
 alias cd2='cd ../..'
 alias cd3='cd ../../..'
