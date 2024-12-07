@@ -84,10 +84,10 @@ sep
 
 # nvm (Node Version Manager)
 echo "Install nvm (Node Version Manager)..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.bashrc
 nvm -v
-nvm install 20
+nvm install 22
 sep
 
 # install Go language
