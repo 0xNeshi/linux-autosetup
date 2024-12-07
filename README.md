@@ -118,7 +118,7 @@ source $HOME/.bashrc
 echo "Install Scarb..."
 asdf plugin add scarb
 asdf install scarb latest
-asdf install scarb 2.8.1
+asdf install scarb 2.9.1
 asdf global scarb latest
 echo "Install Starkli..."
 curl https://get.starkli.sh | sh
