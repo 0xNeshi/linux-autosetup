@@ -238,7 +238,7 @@ sep
 
 # clone Exercism Cairo
 echo "Clone Exercism Cairo repo..."
-git clone git@github.com:exercism-cairo.git exercism-cairo
+git clone git@github.com:exercism/cairo.git exercism-cairo
 sep
 
 # remove redundant packages
