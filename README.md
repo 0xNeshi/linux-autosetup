@@ -58,6 +58,7 @@ echo "Install git..."
 sudo apt install git-all -y
 git config --global user.name "$NAME"
 git config --global user.email "$EMAIL"
+git config --global core.editor "code --wait"
 git --version
 sep
 
