@@ -346,6 +346,7 @@ alias hhn='npx hardhat node'
 alias st='scarb test'
 alias stii='scarb test -- --include-ignored'
 alias sr='scarb run'
+alias scr='scarb cairo-run'
 alias sb='scarb build'
 alias sbt='scarb build --test'
 
