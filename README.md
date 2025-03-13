@@ -353,7 +353,8 @@ alias sbt='scarb build --test'
 # OZ Stylus aliases
 alias nitro='./scripts/nitro-testnode.sh -d -i'
 alias e2e='./scripts/e2e-tests.sh'
-alias cnt='cargo nextest run --locked --features std --all-targets -p openzeppelin-stylus -p openzeppelin-stylus-proc -p openzeppelin-crypto'
+alias cnr='cargo nextest run'
+alias cnroz='cargo nextest run --locked --features std --all-targets -p openzeppelin-stylus -p openzeppelin-stylus-proc -p openzeppelin-crypto'
 
 # open .bashrc alias
 alias cbash='code ~/.bashrc'
