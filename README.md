@@ -351,7 +351,7 @@ alias sb='scarb build'
 alias sbt='scarb build --test'
 
 # OZ Stylus aliases
-alias nitro='./scripts/nitro-testnode.sh -d -i'
+alias nitro='./scripts/nitro-devnode.sh'
 alias e2e='./scripts/e2e-tests.sh'
 alias cnr='cargo nextest run'
 alias cnroz='cargo nextest run --locked --features std --all-targets -p openzeppelin-stylus -p openzeppelin-stylus-proc -p openzeppelin-crypto'
