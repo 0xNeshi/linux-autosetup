@@ -355,7 +355,7 @@ alias sbt='scarb build --test'
 alias nitro='./scripts/nitro-devnode.sh'
 alias e2e='./scripts/e2e-tests.sh'
 alias cnr='cargo nextest run'
-alias cnroz='cargo nextest run --locked --features std --all-targets -p openzeppelin-stylus -p openzeppelin-stylus-proc -p openzeppelin-crypto'
+alias cnroz='cargo nextest run --locked --all-targets -p openzeppelin-stylus -p openzeppelin-stylus-proc -p openzeppelin-crypto'
 
 # open .bashrc alias
 alias cbash='code ~/.bashrc'
