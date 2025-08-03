@@ -93,8 +93,8 @@ sep
 
 # install Go language
 echo "Install Go..."
-wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.22.6.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >>$HOME/.profile
 source $HOME/.profile
 go version
@@ -112,14 +112,18 @@ sep
 
 # install Cairo
 echo "Install asdf..."
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
-echo '. "$HOME/.asdf/asdf.sh"' >>~/.bashrc
-echo '. "$HOME/.asdf/completions/asdf.bash"' >>~/.bashrc
+wget https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-amd64.tar.gz
+mkdir $HOME/.asdf
+echo 'export PATH=$PATH:/$HOME/.asdf' >>$HOME/.profile
+sudo tar -C $HOME/.asdf -xzf asdf-v0.18.0-linux-amd64.tar.gz
+echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >>$HOME/.profile
+source $HOME/.profile
+echo '. <(asdf completion bash)' >>$HOME/.bashrc
 source $HOME/.bashrc
+
 echo "Install Scarb..."
 asdf plugin add scarb
 asdf install scarb latest
-asdf install scarb 2.9.1
 asdf global scarb latest
 echo "Install Starkli..."
 curl https://get.starkli.sh | sh
