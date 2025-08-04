@@ -114,7 +114,7 @@ sep
 echo "Install asdf..."
 wget https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-amd64.tar.gz
 mkdir $HOME/.asdf
-echo 'export PATH=$PATH:/$HOME/.asdf' >>$HOME/.profile
+echo 'export PATH="$PATH:/$HOME/.asdf"' >>$HOME/.profile
 sudo tar -C $HOME/.asdf -xzf asdf-v0.18.0-linux-amd64.tar.gz
 echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >>$HOME/.profile
 source $HOME/.profile
