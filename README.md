@@ -93,8 +93,8 @@ sep
 
 # install Go language
 echo "Install Go..."
-wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.6.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.6.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >>$HOME/.profile
 source $HOME/.profile
 go version
@@ -114,17 +114,16 @@ sep
 echo "Install asdf..."
 wget https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-amd64.tar.gz
 mkdir $HOME/.asdf
-echo 'export PATH="$PATH:/$HOME/.asdf"' >>$HOME/.profile
+echo 'export PATH="$PATH:/$HOME/.asdf"' >>$HOME/.bashrc
 sudo tar -C $HOME/.asdf -xzf asdf-v0.18.0-linux-amd64.tar.gz
-echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >>$HOME/.profile
-source $HOME/.profile
+echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >>$HOME/.bashrc
 echo '. <(asdf completion bash)' >>$HOME/.bashrc
 source $HOME/.bashrc
 
 echo "Install Scarb..."
 asdf plugin add scarb
 asdf install scarb latest
-asdf global scarb latest
+asdf set -u scarb latest
 echo "Install Starkli..."
 curl https://get.starkli.sh | sh
 source ~/.bashrc
@@ -231,14 +230,14 @@ foundryup
 # set up Arbitrum Stylus
 echo "Setup Arbitrum Stylus tools..."
 sudo apt-get install pkg-config libssl-dev -y
-cargo install cargo-stylus@0.5.3
+cargo install cargo-stylus@0.6.1
 sep
 
 # install Solidity (version for Stylus)
 echo "Install Solidity compiler..."
-curl -LO https://github.com/ethereum/solidity/releases/download/v0.8.24/solc-static-linux
-sudo mv solc-static-linux /usr/bin/solc
-sudo chmod a+x /usr/bin/solc
+sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install solc
 sep
 
 # clone Exercism Cairo
@@ -376,6 +375,9 @@ alias cd5='cd ../../../../..'
 alias e='exit'
 alias suup='sudo apt update && sudo apt upgrade -y && asdf install scarb latest && sudo apt autoremove -y'
 EOT
+
+# install Serbian language pack
+sudo apt -y install $(check-language-support -l sr)
 
 ########### TODO
 echo "----------------"
