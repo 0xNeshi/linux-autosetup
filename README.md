@@ -365,7 +365,9 @@ alias cnroz='cargo nextest run --locked --all-targets -p openzeppelin-stylus -p 
 # open .bashrc alias
 alias cbash='code ~/.bashrc'
 alias cbasha='code ~/.bash_aliases'
+alias cprof='code ~/.profile'
 alias sbash='source ~/.bashrc'
+alias sprof='source ~/.profile'
 
 # custom aliases
 alias c='clear'
