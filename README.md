@@ -123,20 +123,8 @@ echo '. <(asdf completion bash)' >>$HOME/.bashrc
 source $HOME/.bashrc
 
 echo "Install Scarb..."
-asdf plugin add scarb
-asdf install scarb latest
-asdf set -u scarb latest
-echo "Install Starkli..."
-curl https://get.starkli.sh | sh
-source ~/.bashrc
-starkliup
-sep
-
-# install Starknet Foundry
-echo "Install Starknet Foundry..."
-curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
-source $HOME/.bashrc
-snfoundryup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.starkup.sh | sh
+snforge --version
 sep
 
 # yarn
