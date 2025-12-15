@@ -347,6 +347,7 @@ alias cnr='cargo nextest run'
 alias cnf='cargo +nightly fmt --all'
 alias clippy='cargo clippy --all-targets --all-features -- -D warnings -D clippy::pedantic'
 alias clippyf='cargo clippy --all-targets --all-features --fix -- -D warnings -D clippy::pedantic'
+alias doc='cargo doc --no-deps --all-features'
 
 # open .bashrc alias
 alias cbash='code ~/.bashrc'
